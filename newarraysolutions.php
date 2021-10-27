@@ -123,3 +123,32 @@
 // echo '<br>';
 // $newColors = $color;
 // echo '<em> Expected Result : </em>' . reset($newColors);
+
+
+// Question 6
+
+// $jsonObjects = '{
+//     "Title": "The Cuckoos Calling",
+//     "Author": "Robert Galbraith",
+//     "Detail": {
+//         "Publisher": "Little Brown"
+//     }
+// }';
+
+// echo '<em> Expected Output : </em>';
+// echo '<br>';
+
+// $infos = json_decode($jsonObjects, true);
+
+// $detail = $infos['Detail']['Publisher'];
+// $infos['Publisher'] = $detail;
+// unset($infos['Detail']);
+
+// foreach($infos as $key => $info) {
+//     echo $key . ' : ' . $info;
+//     echo '<br>';
+// }
+
+// Question 7
+
+$
