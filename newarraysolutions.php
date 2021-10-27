@@ -151,4 +151,105 @@
 
 // Question 7
 
-$
+// $numbers = [
+//     1,
+//     2,
+//     3,
+//     4,
+//     5
+// ];
+
+// echo 'Original array : ';
+// echo '<br>';
+
+// foreach ($numbers as $originalArray) {
+//     echo $originalArray;
+// }
+// echo '<br>';
+
+// $position = 3;
+
+// $newSpot = array_splice($numbers, $position, 0, ['$']);
+
+// echo 'After inserting "$" the array is :';
+// echo '<br>';
+
+// foreach ($numbers as $improvedArray) {
+//     echo $improvedArray;
+// }
+
+// Question 8 
+
+// $patients = [
+//     'Sophia' => '31',
+//     'Jacob' => '41',
+//     'William' => '39',
+//     'Ramesh' => '40'
+// ];
+
+// asort($patients);
+
+// echo 'ascending order sort by value';
+// echo '<br>';
+
+// foreach ($patients as $key => $val) {
+//     echo $key = $val;
+//     echo '<br>';
+// }
+
+// ksort($patients);
+
+// echo 'ascending order sort by Key';
+// echo '<br>';
+
+// foreach ($patients as $key => $val) {
+//     echo $key = $val;
+//     echo '<br>';
+// }
+
+// arsort($patients);
+
+// echo 'descending order sort by Value';
+// echo '<br>';
+
+// foreach ($patients as $key => $val) {
+//     echo $key = $val;
+//     echo '<br>';
+// }
+
+// krsort($patients);
+
+// echo 'descending order sort by Key';
+// echo '<br>';
+
+// foreach ($patients as $key => $val) {
+//     echo $key = $val;
+//     echo '<br>';
+// }
+
+// Question 9 
+
+$RecordedTemperatures = '78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 
+75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73';
+
+$temperature = explode(',', $RecordedTemperatures);
+
+$amount = array_sum($temperature);
+
+$total = count($temperature);
+
+foreach ($temperature as $average) {
+    $average = ceil($amount / $total);
+}
+
+echo '<em> Expected Outcome :</em>';
+echo '<br>';
+echo 'Average Temperature is : ' . $average;
+echo '<br>';
+
+for ($x = 0; $x < 7; $x++) {
+    $x = $total;
+    echo $x;
+}
+
+echo 'List of seven lowest temperatures  : ';
