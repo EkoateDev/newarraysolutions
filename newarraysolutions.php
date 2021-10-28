@@ -229,38 +229,38 @@
 
 // Question 9 
 
-$RecordedTemperatures = '78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 
-75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73';
+// $RecordedTemperatures = '78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 
+// 75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73';
 
-$temperature = explode(', ', $RecordedTemperatures);
+// $temperature = explode(', ', $RecordedTemperatures);
 
-$amount = array_sum($temperature);
+// $amount = array_sum($temperature);
 
-$total = count($temperature);
+// $total = count($temperature);
 
-foreach ($temperature as $average) {
-    $average = ceil($amount / $total);
-}
+// foreach ($temperature as $average) {
+//     $average = ceil($amount / $total);
+// }
 
-echo '<em> Expected Outcome :</em>';
-echo '<br>';
-echo 'Average Temperature is : ' . $average;
-echo '<br>';
+// echo '<em> Expected Outcome :</em>';
+// echo '<br>';
+// echo 'Average Temperature is : ' . $average;
+// echo '<br>';
 
-sort($temperature);
+// sort($temperature);
 
-echo 'List of seven lowest temperatures  : ';
-for ($x = 0; $x < 7; $x++) {
-    echo $temperature[$x] . ' ';
-}
-rsort($temperature);
+// echo 'List of seven lowest temperatures  : ';
+// for ($x = 0; $x < 7; $x++) {
+//     echo $temperature[$x] . ' ';
+// }
+// rsort($temperature);
 
-echo '<br>';
-echo 'List of seven highest temperatures  : ';
+// echo '<br>';
+// echo 'List of seven highest temperatures  : ';
 
-for ($x = 0; $x < 7; $x++) {
-    echo $temperature[$x] . ' ';
-}
+// for ($x = 0; $x < 7; $x++) {
+//     echo $temperature[$x] . ' ';
+// }
 
 
 // Question 10
@@ -268,6 +268,11 @@ for ($x = 0; $x < 7; $x++) {
 
 // Question 11
 
+// function mergeIndex()
+// {
+//     $result = [];
+
+// }
 // $array1 = [
 //     [77, 87],
 //     [23, 45]
@@ -278,13 +283,43 @@ for ($x = 0; $x < 7; $x++) {
 //     'com'
 // ];
 
-// foreach($array1 as $key => &$value){
-
-// }
-
 // $result = array_merge_recursive($array1, $array2);
 
 // echo '<em> Expected Output : </em>';
 
 // echo '<pre>';
 // print_r($result);
+
+// Question 12 
+
+// $color = [
+//     'A' => 'Blue',
+//     'B' => 'Green',
+//     'c' => 'Red'
+// ];
+
+// echo '<em> Sample arrays : </em>';
+// echo '<br>';
+
+// print_r($color);
+
+// echo '<br>';
+// echo '<em> Expected Output : </em>';
+// echo '<br>';
+
+// echo 'Values are in lower case.';
+// echo '<br>';
+
+// $lowerCase = array_map('strtolower', $color);
+
+// print_r($lowerCase);
+
+// echo '<br>';
+// echo 'Values are in upper case.';
+// echo '<br>';
+
+// $upperCase = array_map('strtoupper', $color);
+
+// print_r($upperCase);
+
+// Question 13 
