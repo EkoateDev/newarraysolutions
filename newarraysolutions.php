@@ -232,7 +232,7 @@
 $RecordedTemperatures = '78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 
 75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73';
 
-$temperature = explode(',', $RecordedTemperatures);
+$temperature = explode(', ', $RecordedTemperatures);
 
 $amount = array_sum($temperature);
 
@@ -247,9 +247,44 @@ echo '<br>';
 echo 'Average Temperature is : ' . $average;
 echo '<br>';
 
-for ($x = 0; $x < 7; $x++) {
-    $x = $total;
-    echo $x;
-}
+sort($temperature);
 
 echo 'List of seven lowest temperatures  : ';
+for ($x = 0; $x < 7; $x++) {
+    echo $temperature[$x] . ' ';
+}
+rsort($temperature);
+
+echo '<br>';
+echo 'List of seven highest temperatures  : ';
+
+for ($x = 0; $x < 7; $x++) {
+    echo $temperature[$x] . ' ';
+}
+
+
+// Question 10
+
+
+// Question 11
+
+// $array1 = [
+//     [77, 87],
+//     [23, 45]
+// ];
+
+// $array2 = [
+//     'w3resource',
+//     'com'
+// ];
+
+// foreach($array1 as $key => &$value){
+
+// }
+
+// $result = array_merge_recursive($array1, $array2);
+
+// echo '<em> Expected Output : </em>';
+
+// echo '<pre>';
+// print_r($result);
