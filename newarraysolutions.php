@@ -422,3 +422,20 @@
 // ];
 
 // echo 'Write a PHP script to print ' . $color['holes'][5] . ' and ' . $color['color']['a'];
+
+// Question 20
+
+// $country = [
+//     'Mauritius66',
+//     'Nigeria80',
+//     'India19',
+//     'Congo12',
+//     'Ghana20',
+// ];
+
+// natcasesort($country);
+
+// foreach ($country as $key => $value) {
+//     echo '<pre>';
+//     echo $value;
+// }
