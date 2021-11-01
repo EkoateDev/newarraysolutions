@@ -317,4 +317,59 @@
 
 // Question 13 
 
+// echo '<em> Expected Output : </em>';
+
+// $start = 200;
+// $end = 250;
+// $step = 4;
+
+// $rangeofNumbers = range($start, $end, $step);
+
+// $numbers = implode(',', $rangeofNumbers);
+
+// echo $numbers;
+
+
+// Question 14 
+
+// $sampleArray = [
+//     'abcd',
+//     'abc',
+//     'de',
+//     'hjjj',
+//     'g',
+//     'wer'
+// ];
+
+// $arrayLength = array_map('strlen', $sampleArray);
+
+// $minimun = min($arrayLength);
+
+// $maximum = max($arrayLength);
+
+// echo '<em> Expected Output : </em>';
+
+// echo 'The shortest array length is ' . $minimun . '. ';
+
+// echo 'The shortest array length is ' . $maximum . '.';
+
+// Question 15 
+
+// echo '<em> Sample Range </em>: (11, 20)';
+// echo '<br>';
+
+// $start = 11;
+// $stop = 20;
+
+// $uniqueNumbers = range($start, $stop);
+
+// shuffle($uniqueNumbers);
+
+// echo '<em> Sample Output : </em>';
+
+// foreach($uniqueNumbers as $number){
+//     echo ' ' .$number;
+// }
+
+// Question 16 
 
