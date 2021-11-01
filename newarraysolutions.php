@@ -423,7 +423,7 @@
 
 // echo 'Write a PHP script to print ' . $color['holes'][5] . ' and ' . $color['color']['a'];
 
-// Question 20
+// Question 24
 
 // $country = [
 //     'Mauritius66',
@@ -439,3 +439,5 @@
 //     echo '<pre>';
 //     echo $value;
 // }
+
+// Question 21 
