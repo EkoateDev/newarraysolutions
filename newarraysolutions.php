@@ -373,3 +373,18 @@
 
 // Question 16 
 
+// $formulaOneDrivers = [
+//     'Mercedes' => 'Lewis',
+//     'Redbull' => 'Max', 
+//     'Mclaren' => 'Lando', 
+//     'Ferrari' => 'Charles',
+//     'Aston' => 'Sebastian'
+// ];
+
+// $largestKey = max(array_keys($formulaOneDrivers));
+
+// echo 'The largest Key in the array is ' .$largestKey;
+
+
+// Question 17
+
