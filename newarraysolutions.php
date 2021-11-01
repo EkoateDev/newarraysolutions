@@ -388,3 +388,37 @@
 
 // Question 17
 
+
+
+
+// Question 18
+
+// function dropDecimalNumber($number, $precision, $separator)
+// {
+
+// }
+
+
+// Question 19
+
+// $color = [
+//     'color' => [
+//         'a' => 'Red',
+//         'b' => 'Green',
+//         'c ' => 'White'
+//     ],
+//     'numbers' => [
+//         1,
+//         2,
+//         3,
+//         4,
+//         5,
+//         6
+//     ],
+//     'holes' => [
+//         'First',
+//         5 => 'Second', 'Third'
+//     ]
+// ];
+
+// echo 'Write a PHP script to print ' . $color['holes'][5] . ' and ' . $color['color']['a'];
