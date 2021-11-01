@@ -292,34 +292,29 @@
 
 // Question 12 
 
-// $color = [
+// $Color = [
 //     'A' => 'Blue',
 //     'B' => 'Green',
 //     'c' => 'Red'
 // ];
 
-// echo '<em> Sample arrays : </em>';
+// echo '<em> Expected Output :</em>';
 // echo '<br>';
 
-// print_r($color);
-
-// echo '<br>';
-// echo '<em> Expected Output : </em>';
+// echo 'Values are in lower case';
 // echo '<br>';
 
-// echo 'Values are in lower case.';
-// echo '<br>';
-
-// $lowerCase = array_map('strtolower', $color);
-
-// print_r($lowerCase);
+// $lowerValues = array_map('strtolower', $Color);
+// print_r($lowerValues);
 
 // echo '<br>';
 // echo 'Values are in upper case.';
 // echo '<br>';
 
-// $upperCase = array_map('strtoupper', $color);
+// $upperValues = array_map('strtoupper', $Color);
+// print_r($upperValues);
 
-// print_r($upperCase);
 
 // Question 13 
+
+
