@@ -440,4 +440,33 @@
 //     echo $value;
 // }
 
-// Question 21 
+// Question 26
+
+function shuffleArray($values)
+{
+    $initialKeys = array_keys($values);
+
+    shuffle($initialKeys);
+
+    foreach ($initialKeys as $val) {
+        $new[$val] = $values[$val];
+    }
+
+    $values = $new;
+
+    return $values;
+}
+
+$shoeBrands = [
+    'Nike',
+    'Off-White',
+    'Adidas',
+    'Yeezy',
+    'Vans',
+    'Converse',
+    'Puma',
+    'Fila'
+];
+
+echo '<pre';
+print_r(shuffleArray($shoeBrands));
