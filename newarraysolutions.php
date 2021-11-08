@@ -85,9 +85,8 @@
 // echo '<em> Sample Output :</em>';
 // echo '<br>';
 
-// $newXValue = $x;
 
-// var_dump($newXValue);
+// var_dump($x);
 
 // echo '<br>';
 
@@ -193,9 +192,10 @@
 // echo '<br>';
 
 // foreach ($patients as $key => $val) {
-//     echo $key = $val;
+//     echo $key .' is ' . $val;
 //     echo '<br>';
 // }
+// echo '<br>';
 
 // ksort($patients);
 
@@ -203,9 +203,11 @@
 // echo '<br>';
 
 // foreach ($patients as $key => $val) {
-//     echo $key = $val;
+//     echo $key . ' is ' . $val;
 //     echo '<br>';
 // }
+
+// echo '<br>';
 
 // arsort($patients);
 
@@ -213,9 +215,11 @@
 // echo '<br>';
 
 // foreach ($patients as $key => $val) {
-//     echo $key = $val;
+//     echo $key . ' is ' . $val;
 //     echo '<br>';
 // }
+
+// echo '<br>';
 
 // krsort($patients);
 
@@ -223,72 +227,104 @@
 // echo '<br>';
 
 // foreach ($patients as $key => $val) {
-//     echo $key = $val;
+//     echo $key . ' is ' . $val;
 //     echo '<br>';
 // }
 
 // Question 9 
 
-// $RecordedTemperatures = '78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 
-// 75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73';
+$RecordedTemperatures = '78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 75, 76, 73, 
+68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73';
 
-// $temperature = explode(', ', $RecordedTemperatures);
+$temperature = explode(', ', $RecordedTemperatures);
 
-// $amount = array_sum($temperature);
+$sum = array_sum($temperature);
 
-// $total = count($temperature);
+$total = count($temperature);
 
-// foreach ($temperature as $average) {
-//     $average = ceil($amount / $total);
-// }
+$average = $sum / $total;
 
-// echo '<em> Expected Outcome :</em>';
-// echo '<br>';
-// echo 'Average Temperature is : ' . $average;
-// echo '<br>';
+$roundedAverage = round($average, 1);
 
-// sort($temperature);
+echo '<em> Expected Outcome :</em>';
+echo '<br>';
+echo 'Average Temperature is : ' . $roundedAverage;
+echo '<br>';
 
-// echo 'List of seven lowest temperatures  : ';
-// for ($x = 0; $x < 7; $x++) {
-//     echo $temperature[$x] . ' ';
-// }
-// rsort($temperature);
+sort($temperature);
 
-// echo '<br>';
-// echo 'List of seven highest temperatures  : ';
+echo 'List of seven lowest temperatures  : ';
+for ($x = 0; $x < 7; $x++) {
+    echo $temperature[$x] . ', ';
+}
+rsort($temperature);
 
-// for ($x = 0; $x < 7; $x++) {
-//     echo $temperature[$x] . ' ';
-// }
+echo '<br>';
+echo 'List of seven highest temperatures  : ';
+
+for ($x = 0; $x < 7; $x++) {
+    echo $temperature[$x] . ', ';
+}
 
 
 // Question 10
 
+function columns($uarr)
+{
+    $n = $uarr;
+
+    if (count($n) == 0) {
+        return array();
+    } else if (count($n) == 1) {
+        return array_chunk($n[0], 1);
+    }
+
+    array_unshift($uarr, NULL);
+    $transpose = call_user_func_array('array_map', $uarr);
+    return array_map('array_filter', $transpose);
+}
+
+function bead_sort($uarr)
+{
+    foreach ($uarr as $e) {
+        $poles[] = array_fill(0, $e, 1);
+    }
+
+    return array_map('count', columns(columns($poles)));
+}
+
+echo 'Original Array : ' . '
+';
+print_r(array(5, 3, 1, 3, 8, 7, 4, 1, 1, 3));
+echo '
+' . 'After Bead sort : ' . '
+';
+print_r(bead_sort(array(5, 3, 1, 3, 8, 7, 4, 1, 1, 3)));
 
 // Question 11
 
-// function mergeIndex()
-// {
-//     $result = [];
+$array1 = [
+    [77, 87],
+    [23, 45]
+];
 
-// }
-// $array1 = [
-//     [77, 87],
-//     [23, 45]
-// ];
+$array2 = [
+    'w3resource',
+    'com'
+];
 
-// $array2 = [
-//     'w3resource',
-//     'com'
-// ];
+$result = [];
 
-// $result = array_merge_recursive($array1, $array2);
+foreach ($array1 as $key => $arr) {
+    $result[$key][0] = $array2[$key];
+    $result[$key][1] = $arr[0];
+    $result[$key][2] = $arr[1];
+}
 
-// echo '<em> Expected Output : </em>';
+echo '<em> Expected Output : </em>';
 
-// echo '<pre>';
-// print_r($result);
+echo '<pre>';
+print_r($result);
 
 // Question 12 
 
@@ -375,15 +411,27 @@
 
 // $formulaOneDrivers = [
 //     'Mercedes' => 'Lewis',
-//     'Redbull' => 'Max', 
-//     'Mclaren' => 'Lando', 
+//     'Redbull' => 'Max',
+//     'Mclaren' => 'Lando',
 //     'Ferrari' => 'Charles',
 //     'Aston' => 'Sebastian'
 // ];
 
-// $largestKey = max(array_keys($formulaOneDrivers));
+// $arrayKeys = array_keys($formulaOneDrivers);
+// $longestString = 0;
+// $highestIndex = 0;
 
-// echo 'The largest Key in the array is ' .$largestKey;
+// foreach ($arrayKeys as $key => $value) {
+//     $length = strlen($value);
+//     if ($longestString < $length) {
+//         $longestString = $length;
+//         $highestIndex = $key;
+//     }
+// }
+
+// $largestKey = $arrayKeys[$highestIndex];
+
+// echo 'The largest Key in the array is ' . $largestKey;
 
 
 // Question 17
@@ -472,36 +520,76 @@
 // print_r(shuffleArray($shoeBrands));
 
 
-// Question 28 
+// Question 27
 
-function passwordGenerator($upperCase = 6, $lowerCase = 4, $numCase = 3, $others = 2)
-{
-    $passwordArray = [];
-    $passwordValues = '';
+// function passwordGenerator($upperCase = 6, $lowerCase = 4, $numCase = 3, $others = 2)
+// {
+//     $passwordArray = [];
+//     $passwordValues = '';
 
-    for ($x = 0; $x < $upperCase; $x++) {
-        $passwordArray[] = chr(mt_rand(44, 122));
-    }
-    for ($x = 0; $x < $lowerCase; $x++) {
-        $passwordArray[] = chr(mt_rand(77, 93));
-    }
-    for ($x = 0; $x < $numCase; $x++) {
-        $passwordArray[] = chr(mt_rand(60, 210));
-    }
-    for ($x = 0; $x < $others; $x++) {
-        $passwordArray[] = chr(mt_rand(22, 180));
-    }
+//     for ($x = 0; $x < $upperCase; $x++) {
+//         $passwordArray[] = chr(mt_rand(44, 122));
+//     }
+//     for ($x = 0; $x < $lowerCase; $x++) {
+//         $passwordArray[] = chr(mt_rand(77, 93));
+//     }
+//     for ($x = 0; $x < $numCase; $x++) {
+//         $passwordArray[] = chr(mt_rand(60, 210));
+//     }
+//     for ($x = 0; $x < $others; $x++) {
+//         $passwordArray[] = chr(mt_rand(22, 180));
+//     }
 
-    shuffle($passwordArray);
+//     shuffle($passwordArray);
 
-    // Appending values to the empty string 
+//     // Appending values to the empty string 
 
-    foreach ($passwordArray as $val) {
-        $passwordValues .= $val;
-    }
+//     foreach ($passwordArray as $val) {
+//         $passwordValues .= $val;
+//     }
 
-    return $passwordValues;
-}
+//     return $passwordValues;
+// }
 
-echo '<br>';
-echo 'Generated Password is : ' . passwordGenerator();
+// echo '<br>';
+// echo 'Generated Password is : ' . passwordGenerator();
+
+
+// Question 28
+
+// $shoeCollection = [
+//     'Nike',
+//     'Off-White',
+//     'Adidas',
+//     'Yeezy',
+//     'Vans',
+//     'Converse',
+//     'Puma',
+//     'Fila'
+// ];
+
+// rsort($shoeCollection);
+
+// foreach($shoeCollection as $val){
+//     echo $val . ' ';
+// }
+
+
+// Question 29
+
+$str = '2-4 19-21 8-15';
+
+$pattern = "/"
+
+// function stringRange($string1)
+// {
+//     preg_match_all("/([0-9]{1,2})-?([0-9]{0,2}) ?,?;?/", $string1, $a);
+//     $y = [];
+//     foreach ($a[1] as $z => $i) {
+//         $y = array_merge($y, range($i, (empty($a[2][$z]) ? $i : $a[2][$z])));
+//     }
+//     return ($y);
+// }
+
+// $testString = '1-2 18-20 9-11';
+// print_r(stringRange($testString));
