@@ -442,31 +442,66 @@
 
 // Question 26
 
-function shuffleArray($values)
+// function shuffleArray($values)
+// {
+//     $initialKeys = array_keys($values);
+
+//     shuffle($initialKeys);
+
+//     foreach ($initialKeys as $val) {
+//         $new[$val] = $values[$val];
+//     }
+
+//     $values = $new;
+
+//     return $values;
+// }
+
+// $shoeBrands = [
+//     'Nike',
+//     'Off-White',
+//     'Adidas',
+//     'Yeezy',
+//     'Vans',
+//     'Converse',
+//     'Puma',
+//     'Fila'
+// ];
+
+// echo '<pre>';
+// print_r(shuffleArray($shoeBrands));
+
+
+// Question 28 
+
+function passwordGenerator($upperCase = 6, $lowerCase = 4, $numCase = 3, $others = 2)
 {
-    $initialKeys = array_keys($values);
+    $passwordArray = [];
+    $passwordValues = '';
 
-    shuffle($initialKeys);
-
-    foreach ($initialKeys as $val) {
-        $new[$val] = $values[$val];
+    for ($x = 0; $x < $upperCase; $x++) {
+        $passwordArray[] = chr(mt_rand(44, 122));
+    }
+    for ($x = 0; $x < $lowerCase; $x++) {
+        $passwordArray[] = chr(mt_rand(77, 93));
+    }
+    for ($x = 0; $x < $numCase; $x++) {
+        $passwordArray[] = chr(mt_rand(60, 210));
+    }
+    for ($x = 0; $x < $others; $x++) {
+        $passwordArray[] = chr(mt_rand(22, 180));
     }
 
-    $values = $new;
+    shuffle($passwordArray);
 
-    return $values;
+    // Appending values to the empty string 
+
+    foreach ($passwordArray as $val) {
+        $passwordValues .= $val;
+    }
+
+    return $passwordValues;
 }
 
-$shoeBrands = [
-    'Nike',
-    'Off-White',
-    'Adidas',
-    'Yeezy',
-    'Vans',
-    'Converse',
-    'Puma',
-    'Fila'
-];
-
-echo '<pre';
-print_r(shuffleArray($shoeBrands));
+echo '<br>';
+echo 'Generated Password is : ' . passwordGenerator();
