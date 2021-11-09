@@ -579,7 +579,7 @@ print_r($result);
 
 $str = '2-4 19-21 8-15';
 
-$pattern = "/"
+$pattern = "/";
 
 // function stringRange($string1)
 // {
