@@ -1,5 +1,7 @@
 <?php
 
+// 
+
 $d = date('D');
 
 if ($d === 'Friday') {
@@ -17,11 +19,11 @@ if ($d === 'Friday') {
 
 // 4 - 6 +2 * 2 / 2
 // // B bracket
-// // O of
+// // O orders
 // // D division
 // // M multiplication
 // // A addition
-// // S substraction
+// // S subtraction
 
 // 4 - (6 +(2 * (2 / 2)))
 
@@ -36,7 +38,7 @@ if ($d === 'Friday') {
 
 
 
-
+// 
 
 $t = date("H");
 
@@ -46,6 +48,7 @@ if ($t < "15") {
     echo "Have a good night!";
 }
 
+// 
 
 $drivers = [
     'Hamilton',
@@ -63,59 +66,146 @@ if (array_search('Lewis', $drivers) !== false) {
     echo 'Other drivers Without 7x found';
 }
 
+// 
 
 $age = 19;
 
 if ($age < 18) {
     echo 'Child';
-} elseif ($age == 19) {
+} elseif ($age === 19) {
     echo 'Adult baby';
 } else {
     echo 'We are only serching for 19 years of age';
 }
 
+// 
 
 $year = date('Y');
 
 if ($year < 2020) :
     echo 'This is not the current year';
-elseif ($year == 2021) :
+elseif ($year === 2021) :
     echo 'This is the current year ' . $year;
 else :
     echo 'The selected year is not accepted here';
 endif;
 
+// 
 
 $x = 2;
-
 while ($x <= 15) {
     $x += 5;
     echo 'The number is ' . $x . '<br>';
 }
 
+// 
 
 $y = 1;
-
 while ($y <= 4) :
     $y++;
     echo 'The number is ' . $y . '<br>';
 endwhile;
 
+// 
 
-$brands = [
-    'Apple',
-    'Lg',
-    'Samsung',
-    'Asus',
+$z = 5;
+do {
+    echo "the number is : $z <br>";
+} while ($z <= 4);
+
+
+
+// generating an array with random even numbers between 1 and 1000
+
+$numbers = [];
+$arraySize = 5;
+
+// for loop runs as long as 2nd condition evaluates to true
+for ($i = 0; $i < $arraySize; $i++) {
+
+    // always executes (as long as the for-loop runs)
+    do {
+        $random = mt_rand(100, 1000);
+
+        // if the random number is even (condition below is false), the do-while-loop execution ends
+        // if it's uneven (condition below is true), the loop continues by generating a new random number
+    } while (($random % 2) == 1);
+
+    // even random number is written to array and for-loop continues iteration until original condition is met
+    $numbers[] = $random;
+}
+
+// sorting array by values
+
+asort($numbers);
+
+// printing array
+
+echo '<pre>';
+print_r($numbers);
+echo '</pre>';
+
+// 
+
+for ($x = 0; $x < 4; $x++) {
+    echo "The number is $x <br>";
+}
+
+// 
+$people = [
+    [
+        'name' => 'Kalle',
+        'salt' => 856412
+    ],
+    [
+        'name' => 'Pierre',
+        'salt' => 215863
+    ]
 ];
 
-$arrayLength = count($brands);
+$size = count($people);
 
-$i = 0;
+for ($i = 0; $i < $size; ++$i) {
+    $people[$i]['salt'] = mt_rand(000000, 999999);
+}
 
-while ($i < $arrayLength) :
-    echo $brands[$i] . '<br>';
-    $i++;
+echo '<pre>';
 
-endwhile;
+print_r($people);
 
+
+// Here is a two dimentional array  in order to access the elements we need to access the indices Row and Column 
+
+$cars = [
+    ['Volvo', 2022, 18],
+    ['BMW', 2015, 13],
+    ['Saab', 2005, 2],
+    ['Land Rover', 2017, 15]
+];
+
+echo 'car name is ' . $cars[0][0] . ' production year is ' . $cars[0][1] . ' Current stock is ' . $cars[0][2];
+echo '<br>';
+echo 'car name is ' . $cars[1][0] . ' production year is ' . $cars[1][1] . ' Current stock is ' . $cars[1][2];
+echo '<br>';
+echo 'car name is ' . $cars[2][0] . ' production year is ' . $cars[2][1] . ' Current stock is ' . $cars[2][2];
+echo '<br>';
+echo 'car name is ' . $cars[3][0] . ' production year is ' . $cars[3][1] . ' Current stock is ' . $cars[3][2];
+echo '<br>';
+
+// 
+
+$cars = [
+    ['Volvo', 22, 18],
+    ['BMW', 15, 13],
+    ['Saab', 5, 2],
+    ['Land Rover', 17, 15]
+];
+
+for ($row = 0; $row < 4; $row++) {
+    echo "<p><b>Row number $row</b></p>";
+    echo '<ul>';
+    for ($col = 0; $col < 3; $col++) {
+        echo '<li>' . $cars[$row][$col] . '</li>';
+    }
+    echo '</ul>';
+}

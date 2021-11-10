@@ -78,3 +78,28 @@ echo '<br>';
 
 $upperValues = array_map('strtoupper', $Color);
 print_r($upperValues);
+
+
+$rookies = [
+    ['Geroge', 'Alex'],
+    ['Latifi', 'Ocon']
+];
+
+$topRookies = [
+    'Lando',
+    'Stroll'
+];
+
+$result = [];
+
+foreach ($rookies as $key => $val) {
+    $result[$key][0] = $topRookies[$key];
+    $result[$key][1] = $val[0];
+    $result[$key][2] = $val[1];
+}
+
+echo 'The List of Top Rookies are';
+
+echo '<pre>';
+
+print_r($result);

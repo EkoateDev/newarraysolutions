@@ -297,8 +297,7 @@ echo 'Original Array : ' . '
 ';
 print_r(array(5, 3, 1, 3, 8, 7, 4, 1, 1, 3));
 echo '
-' . 'After Bead sort : ' . '
-';
+' . 'After Bead sort : ' . ' ';
 print_r(bead_sort(array(5, 3, 1, 3, 8, 7, 4, 1, 1, 3)));
 
 // Question 11
