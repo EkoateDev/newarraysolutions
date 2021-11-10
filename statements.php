@@ -220,3 +220,7 @@ $multiArray = [
 
 ];
 
+$z = 15;
+do {
+    echo "The values of $z <br>";
+} while ($z <= 20);
