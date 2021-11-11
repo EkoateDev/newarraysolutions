@@ -69,10 +69,12 @@ if (array_search('Lewis', $drivers) !== false) {
 // 
 
 $age = 19;
+$underAge = 18;
+$correctAge = 19;
 
-if ($age < 18) {
+if ($age < $underAge) {
     echo 'Child';
-} elseif ($age === 19) {
+} elseif ($age === $correctAge) {
     echo 'Adult baby';
 } else {
     echo 'We are only serching for 19 years of age';
@@ -81,10 +83,12 @@ if ($age < 18) {
 // 
 
 $year = date('Y');
+$lastYear = 2020;
+$currentYear = 2021;
 
-if ($year < 2020) :
+if ($year < $lastYear) :
     echo 'This is not the current year';
-elseif ($year === 2021) :
+elseif ($year == $currentYear) :
     echo 'This is the current year ' . $year;
 else :
     echo 'The selected year is not accepted here';
@@ -165,14 +169,31 @@ $people = [
 
 $size = count($people);
 
-for ($i = 0; $i < $size; ++$i) {
+for ($i = 0; $i < $size; $i++) {
     $people[$i]['salt'] = mt_rand(000000, 999999);
 }
 
 echo '<pre>';
-
 print_r($people);
 
+// Displays all associative array keys where value is equal to Milk
+$products = [
+    'stock1' => 'Milk',
+    'stock2' => 'Milo',
+    'stock3' => 'Wine',
+    'stock4' => 'Milk',
+    'stock5' => 'Ice',
+    'stock6' => 'Milk',
+];
+
+while ($productName = current($products)) {
+    if ($productName === 'Milk') {
+        echo key($products) . '<br>';
+    } else {
+        echo 'Product not found';
+    }
+    next($products);
+}
 
 // Here is a two dimentional array  in order to access the elements we need to access the indices Row and Column 
 
@@ -210,17 +231,76 @@ for ($row = 0; $row < 4; $row++) {
     echo '</ul>';
 }
 
+// 
 
-$multiArray = [
-    [
-        [],
-        [],
-        []
-    ],
-
+$numbers = [
+    1,
+    2,
+    3,
+    4,
 ];
 
-$z = 15;
+foreach ($numbers as $value) {
+    $value = &$value * 2;
+}
+
+print_r($value);
+
+// 
+
+$h = 20;
 do {
-    echo "The values of $z <br>";
-} while ($z <= 20);
+    $h++;
+    echo $h . '<br>';
+} while ($h <= 30);
+
+// 
+
+$juices = [
+    'apple',
+    'orange',
+    'koolaid1' => 'purple'
+];
+
+echo "He drank some $juices[0] juice." . PHP_EOL;
+echo "He drank some $juices[1] juice." . PHP_EOL;
+echo "He drank some $juices[koolaid1] juice." . PHP_EOL;
+
+class people
+{
+    public $john = 'John Smith';
+    public $jane = 'Jane Smith';
+    public $robert = 'Robert Paulsen';
+
+    public $smith = 'Smith';
+}
+
+$data = new people();
+
+echo "$data->john drank some $juices[0] juice." . PHP_EOL;
+echo "$data->john then said hello to $data->jane." . PHP_EOL;
+echo "$data->john's wife greeted $data->robert." . PHP_EOL;
+echo "$data->robert greeted the two $data->smith.";
+
+// 
+
+$favCar = 'Tesla';
+
+switch ($favCar) {
+    case 'Tesla':
+        echo 'This is your favorite car ' . $favCar;
+        break;
+
+    case 'Mercedes':
+        echo 'Mercedes is now your favorite car' . $favCar;
+        break;
+
+    default:
+        echo 'none of the listed car here is your favorite';
+}
+
+
+$str = 'Welcome to The Test';
+$result = strlen($str)-1;
+
+echo $result;
