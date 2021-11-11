@@ -184,19 +184,21 @@ $products = [
     'stock3' => 'Wine',
     'stock4' => 'Milk',
     'stock5' => 'Ice',
-    'stock6' => 'Milk',
+    'stock6' => 'Milk'
 ];
 
 while ($productName = current($products)) {
     if ($productName === 'Milk') {
         echo key($products) . '<br>';
-    } else {
-        echo 'Product not found';
     }
     next($products);
 }
 
-// Here is a two dimentional array  in order to access the elements 
+
+
+
+
+// Here is a two dimensional array  in order to access the elements 
 // we need two indices to select and Element using the Row and Column  structure
 
 $cars = [
@@ -216,7 +218,7 @@ echo 'car name is ' . $cars[3][0] . ' production year is ' . $cars[3][1] . ' Cur
 echo '<br>';
 
 
-// Here is a three dimentional array  in order to access the elements 
+// Here is a three dimensional array  in order to access the elements 
 // we need three indices to select and Element using the Row and Column  structure
 
 $smartPhones = [
@@ -261,22 +263,7 @@ for ($row = 0; $row < 4; $row++) {
     echo '</ul>';
 }
 
-// 
-
-$numbers = [
-    1,
-    2,
-    3,
-    4,
-];
-
-foreach ($numbers as $value) {
-    $value = &$value * 2;
-}
-
-print_r($value);
-
-// 
+//
 
 $h = 20;
 do {
@@ -329,8 +316,29 @@ switch ($favCar) {
         echo 'none of the listed car here is your favorite';
 }
 
+// 
 
 $str = 'Welcome to The Test';
 $result = strlen($str) - 1;
 
 echo $result;
+
+// 
+
+$arr = [1, 2, 3, 4];
+foreach ($arr as &$value) {
+    $value = $value * 2;
+}
+print_r($arr);
+// $arr is now array(2, 4, 6, 8)
+
+// without an unset($value), $value is still a reference to the last item: $arr[3]
+
+$newArr = $arr;
+
+foreach ($newArr as $key => $value) {
+    // $arr[3] will be updated with each value from $arr...
+    echo "{$key} => {$value} ";
+    echo '<pre>';
+    print_r($newArr);
+}
