@@ -114,6 +114,7 @@ endwhile;
 
 $z = 5;
 do {
+    echo $z++;
     echo "the number is : $z <br>";
 } while ($z <= 4);
 
@@ -195,7 +196,8 @@ while ($productName = current($products)) {
     next($products);
 }
 
-// Here is a two dimentional array  in order to access the elements we need to access the indices Row and Column 
+// Here is a two dimentional array  in order to access the elements 
+// we need two indices to select and Element using the Row and Column  structure
 
 $cars = [
     ['Volvo', 2022, 18],
@@ -212,6 +214,34 @@ echo 'car name is ' . $cars[2][0] . ' production year is ' . $cars[2][1] . ' Cur
 echo '<br>';
 echo 'car name is ' . $cars[3][0] . ' production year is ' . $cars[3][1] . ' Current stock is ' . $cars[3][2];
 echo '<br>';
+
+
+// Here is a three dimentional array  in order to access the elements 
+// we need three indices to select and Element using the Row and Column  structure
+
+$smartPhones = [
+    [
+        ['Apple', 'Iphone 12', 2020],
+        ['Samsung', 'Galaxy Note 20', 2019],
+        ['Htc', 'One plus', 2017]
+    ]
+];
+
+echo 'The brand of the phone is ' . $smartPhones[0][0][0] .
+    ' The model is ' . $smartPhones[0][0][1] .
+    ' Year produced is ' . $smartPhones[0][0][2];
+
+echo '<br>';
+
+echo 'The brand of the phone is ' . $smartPhones[0][1][0] .
+    ' The model is ' . $smartPhones[0][1][1] .
+    ' Year produced is ' . $smartPhones[0][1][2];
+
+echo '<br>';
+
+echo 'The brand of the phone is ' . $smartPhones[0][2][0] .
+    ' The model is ' . $smartPhones[0][2][1] .
+    ' Year produced is ' . $smartPhones[0][2][2];
 
 // 
 
@@ -301,6 +331,6 @@ switch ($favCar) {
 
 
 $str = 'Welcome to The Test';
-$result = strlen($str)-1;
+$result = strlen($str) - 1;
 
 echo $result;
