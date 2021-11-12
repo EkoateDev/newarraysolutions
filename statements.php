@@ -419,6 +419,63 @@ foreach ($mobileCarriers as $value) {
 }
 
 // 
+$carCompanies = [
+    'Toyota',
+    'Bmw',
+    'Honda',
+    'Nissan',
+];
+
+foreach ($carCompanies as $cars) {
+    if ($cars === 'Bmw') {
+        break;
+    }
+    echo $cars .  ' is One of the Bad boys have been found.';
+}
+
+// 
+
+$x = 10;
+
+while ($x < 20) {
+    if ($x == 16) {
+        break;
+    }
+    echo 'The numbers are ' . $x . '<br>';
+
+    $x++;
+}
+
+// Starting continue
+
+for ($y = 0; $y < 10; $y++) {
+    if ($y == 4) {
+        continue;
+    }
+    echo 'The numbers are ' . $y . '<br>';
+}
+
+// 
+
+$gamingPc = [
+    'Acer' => 'Alien Ware',
+    'Hp' => 'Spectre',
+    'Lenovo' => 'G5',
+    'Dell' => 'Latitude'
+];
+
+foreach ($gamingPc as $key => $value) {
+    if($key === 'Hp'){
+        continue;
+    }
+    echo 'The Top Gaming Pc now is '. $gamingPc[$key];
+    echo '<br>';
+}
+
+
+// Started Switch here 
+
+// 
 $favCar = 'Tesla';
 
 switch ($favCar) {
@@ -450,32 +507,4 @@ while (++$y) {
         default:
             break;
     }
-}
-
-// 
-$carCompanies = [
-    'Toyota',
-    'Bmw',
-    'Honda',
-    'Nissan',
-];
-
-foreach ($carCompanies as $cars) {
-    if ($cars === 'Bmw') {
-        break;
-    }
-    echo $cars .  ' is One of the Bad boys have been found.';
-}
-
-// Starting continue
-
-$x = 10;
-
-while ($x < 20) {
-    if ($x = 16) {
-        break;
-    }
-    echo 'The numbers are' . $x;
-
-    $x++;
 }
