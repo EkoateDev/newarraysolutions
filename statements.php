@@ -118,7 +118,10 @@ do {
     echo "the number is : $z <br>";
 } while ($z <= 4);
 
+// 
 
+$x = 4;
+$y = 3;
 
 // generating an array with random even numbers between 1 and 1000
 
@@ -134,13 +137,14 @@ for ($i = 0; $i < $arraySize; $i++) {
 
         // if the random number is even (condition below is false), the do-while-loop execution ends
         // if it's uneven (condition below is true), the loop continues by generating a new random number
+        // If the number generate is an odd number the do while will execute the condition below.
     } while (($random % 2) == 1);
 
     // even random number is written to array and for-loop continues iteration until original condition is met
     $numbers[] = $random;
 }
 
-// sorting array by values
+// sorting array acending order by values
 
 asort($numbers);
 
@@ -193,7 +197,6 @@ while ($productName = current($products)) {
     }
     next($products);
 }
-
 
 
 
@@ -424,3 +427,29 @@ $tea = [
 // Listing all the variables 
 list($flavour, $topping, $brand) = $tea;
 echo 'My type of tea is ' . $flavour . ' and I prefer ' . $topping . ' I like buying from ' . $brand;
+
+$colors = [
+    ['white', 'black'],
+    ['yellow', 'blue'],
+];
+
+foreach ($colors as list($x)) {
+    echo 'My fav Color is ' . $x . ' ';
+}
+
+// 
+
+$mobileCarriers = [
+    'T-Mobile',
+    'Verizon',
+    'AT&T',
+    'Emtel',
+    'myT'
+];
+
+foreach($mobileCarriers as $value){
+    if($value === 'Emtel'){
+        break;
+    }
+    echo $value .'<br>';
+}

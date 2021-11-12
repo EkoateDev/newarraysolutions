@@ -103,3 +103,22 @@ echo 'The List of Top Rookies are';
 echo '<pre>';
 
 print_r($result);
+
+
+$result = [];
+$arraySize = 2;
+
+for ($x = 0; $x < $arraySize; $x++) {
+
+    do {
+        $randomNumbers = mt_rand(200, 350);
+    } while (($randomNumbers % 2) == 1);
+
+    $result[] = $randomNumbers;
+}
+
+asort($result);
+
+echo '<pre>';
+print_r($result);
+echo '</pre>';
