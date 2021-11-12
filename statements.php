@@ -465,31 +465,48 @@ $gamingPc = [
 ];
 
 foreach ($gamingPc as $key => $value) {
-    if($key === 'Hp'){
+    if ($key === 'Hp') {
         continue;
     }
-    echo 'The Top Gaming Pc now is '. $gamingPc[$key];
+    echo 'The Top Gaming Pc now is ' . $gamingPc[$key];
     echo '<br>';
 }
 
 
 // Started Switch here 
 
-// 
-$favCar = 'Tesla';
+// The structure 
 
-switch ($favCar) {
-    case 'Tesla':
-        echo 'This is your favorite car ' . $favCar;
-        break;
+$i = 5;
 
-    case 'Mercedes':
-        echo 'Mercedes is now your favorite car' . $favCar;
-        break;
-
-    default:
-        echo 'none of the listed car here is your favorite';
+if ($i == 3) {
+    echo 'i equals to three';
+} elseif ($i == 2) {
+    echo 'i equals to two';
+} elseif ($i == 4) {
+    echo 'i equals to four';
+} else {
+    echo 'xxx';
 }
+
+// 
+$i = 'Tesla';
+
+switch ($i) {
+    case 'Bmw':
+        echo 'This ride is BMW ';
+        break;
+    case 'Mercedes':
+        echo 'Lewis belongs here';
+        break;
+    case 'Audi':
+        echo 'Audi is a very fast car';
+        break;
+    default:
+        echo 'The preferred car is not in the list';
+        break;
+}
+
 // 
 $y = 0;
 
