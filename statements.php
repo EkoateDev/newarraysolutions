@@ -342,3 +342,85 @@ foreach ($newArr as $key => $value) {
     echo '<pre>';
     print_r($newArr);
 }
+
+
+// 
+
+$a = [
+    'one' => 1,
+    'two' => 2,
+    'three' => 3,
+    'seventeen' => 17
+];
+
+foreach ($a as $k => $v) {
+    echo "\$a[$k] = $v.\n";
+}
+
+// 
+
+$a = array();
+$a[0][0] = "a";
+$a[0][1] = "b";
+$a[1][0] = "y";
+$a[1][1] = "z";
+
+foreach ($a as $v1) {
+    foreach ($v1 as $v2) {
+        echo "$v2\n";
+    }
+}
+
+$sportShoes = [];
+
+$sportShoes[0][0] = 'Adidas';
+$sportShoes[0][1] = 'Fila';
+$sportShoes[1][0] = 'New Balance';
+$sportShoes[1][1] = 'Nike';
+
+foreach ($sportShoes as $val1) {
+    foreach ($val1 as $val2) {
+        echo $val2 . '<br>';
+    }
+}
+
+
+$numbers = [1, 2, 3, 4, 5];
+
+$arrayLength = count($numbers);
+
+for ($x = 0; $x < $arrayLength; $x++) {
+    echo $numbers[$x];
+}
+
+$array = [
+    [1, 2],
+    [3, 4],
+];
+
+foreach ($array as list($a, $b)) {
+    // $a contains the first element of the nested array,
+    // and $b contains the second element.
+    echo "A: $a; B: $b\n";
+}
+// 
+
+$drinks = [
+    ['Coke', 'Pepsi'],
+    ['Fanta', 'Sprite']
+];
+
+foreach ($drinks as list($soft1, $soda)) {
+    echo "I love:  $soft1  and I like $soda <br>";
+}
+
+// 
+$tea = [
+    'Caramel',
+    'Honey',
+    'Casino'
+];
+
+// Listing all the variables 
+list($flavour, $topping, $brand) = $tea;
+echo 'My type of tea is ' . $flavour . ' and I prefer ' . $topping . ' I like buying from ' . $brand;
