@@ -302,22 +302,7 @@ echo "$data->john then said hello to $data->jane." . PHP_EOL;
 echo "$data->john's wife greeted $data->robert." . PHP_EOL;
 echo "$data->robert greeted the two $data->smith.";
 
-// 
 
-$favCar = 'Tesla';
-
-switch ($favCar) {
-    case 'Tesla':
-        echo 'This is your favorite car ' . $favCar;
-        break;
-
-    case 'Mercedes':
-        echo 'Mercedes is now your favorite car' . $favCar;
-        break;
-
-    default:
-        echo 'none of the listed car here is your favorite';
-}
 
 // 
 
@@ -346,33 +331,7 @@ foreach ($newArr as $key => $value) {
     print_r($newArr);
 }
 
-
 // 
-
-$a = [
-    'one' => 1,
-    'two' => 2,
-    'three' => 3,
-    'seventeen' => 17
-];
-
-foreach ($a as $k => $v) {
-    echo "\$a[$k] = $v.\n";
-}
-
-// 
-
-$a = array();
-$a[0][0] = "a";
-$a[0][1] = "b";
-$a[1][0] = "y";
-$a[1][1] = "z";
-
-foreach ($a as $v1) {
-    foreach ($v1 as $v2) {
-        echo "$v2\n";
-    }
-}
 
 $sportShoes = [];
 
@@ -387,6 +346,7 @@ foreach ($sportShoes as $val1) {
     }
 }
 
+// 
 
 $numbers = [1, 2, 3, 4, 5];
 
@@ -395,6 +355,8 @@ $arrayLength = count($numbers);
 for ($x = 0; $x < $arrayLength; $x++) {
     echo $numbers[$x];
 }
+
+// 
 
 $array = [
     [1, 2],
@@ -428,6 +390,8 @@ $tea = [
 list($flavour, $topping, $brand) = $tea;
 echo 'My type of tea is ' . $flavour . ' and I prefer ' . $topping . ' I like buying from ' . $brand;
 
+// 
+
 $colors = [
     ['white', 'black'],
     ['yellow', 'blue'],
@@ -437,7 +401,7 @@ foreach ($colors as list($x)) {
     echo 'My fav Color is ' . $x . ' ';
 }
 
-// 
+// break starts from here
 
 $mobileCarriers = [
     'T-Mobile',
@@ -447,9 +411,71 @@ $mobileCarriers = [
     'myT'
 ];
 
-foreach($mobileCarriers as $value){
-    if($value === 'Emtel'){
+foreach ($mobileCarriers as $value) {
+    if ($value === 'Emtel') {
         break;
     }
-    echo $value .'<br>';
+    echo $value . '<br>';
+}
+
+// 
+$favCar = 'Tesla';
+
+switch ($favCar) {
+    case 'Tesla':
+        echo 'This is your favorite car ' . $favCar;
+        break;
+
+    case 'Mercedes':
+        echo 'Mercedes is now your favorite car' . $favCar;
+        break;
+
+    default:
+        echo 'none of the listed car here is your favorite';
+}
+// 
+$y = 0;
+
+while (++$y) {
+    switch ($y) {
+        case 5:
+            echo 'I am breaking at 5';
+            echo '<br>';
+            break 1;
+
+        case 10:
+            echo 'okay sorry I Quit at 10';
+            break 2;
+
+        default:
+            break;
+    }
+}
+
+// 
+$carCompanies = [
+    'Toyota',
+    'Bmw',
+    'Honda',
+    'Nissan',
+];
+
+foreach ($carCompanies as $cars) {
+    if ($cars === 'Bmw') {
+        break;
+    }
+    echo $cars .  ' is One of the Bad boys have been found.';
+}
+
+// Starting continue
+
+$x = 10;
+
+while ($x < 20) {
+    if ($x = 16) {
+        break;
+    }
+    echo 'The numbers are' . $x;
+
+    $x++;
 }
