@@ -346,20 +346,6 @@ foreach ($newArr as $key => $value) {
     print_r($newArr);
 }
 
-// 
-
-$sportShoes = [];
-
-$sportShoes[0][0] = 'Adidas';
-$sportShoes[0][1] = 'Fila';
-$sportShoes[1][0] = 'New Balance';
-$sportShoes[1][1] = 'Nike';
-
-foreach ($sportShoes as $val1) {
-    foreach ($val1 as $val2) {
-        echo $val2 . '<br>';
-    }
-}
 
 // 
 
@@ -587,5 +573,69 @@ var_dump($returnValues);
 
 // Declare
 
-declare(ticks=1) {
+$count = 0;
+
+// Function is called on each tick event.
+
+function example()
+{
+    global $count;
+    $count++;
+    echo "$count instructions executed<br>";
 }
+
+// causes a tick event
+register_tick_function('example');
+
+declare(ticks=1) {
+
+    
+    $cars = [
+        'Ford',
+        'Volvo',
+        'BMW'
+    ];
+
+    foreach ($cars as $car) {
+        // causes a tick event
+        echo $car . '<br>';
+    }
+}
+
+// 
+
+declare(ticks=1);
+
+// A function called on each tick event
+function tick_handler()
+{
+    echo "tick_handler() called\n";
+    echo '<pre>';
+}
+
+register_tick_function('tick_handler'); // causes a tick event
+
+$a = 1; // causes a tick event
+
+if ($a > 0) {
+    $a += 2; // causes a tick event
+    print($a); // causes a tick event
+
+}
+
+//  Return 
+
+function square($num)
+{
+    return $num * $num;
+}
+echo square(4);
+
+// 
+
+function add1($x)
+{
+    return $x + 1;
+}
+
+echo "5 + 1 is " . add1(5);
