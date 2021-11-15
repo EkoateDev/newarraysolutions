@@ -98,7 +98,7 @@ endif;
 
 $x = 2;
 while ($x <= 15) {
-    $x += 5;
+    $x += 2;
     echo 'The number is ' . $x . '<br>';
 }
 
@@ -113,15 +113,14 @@ endwhile;
 // 
 
 $z = 5;
+
 do {
-    echo $z++;
-    echo "the number is : $z <br>";
+    $z++;
+    echo 'the number is ' . $z;
+    echo '<br>';
 } while ($z <= 4);
 
-// 
 
-$x = 4;
-$y = 3;
 
 // generating an array with random even numbers between 1 and 1000
 
@@ -164,22 +163,38 @@ for ($x = 0; $x < 4; $x++) {
 $people = [
     [
         'name' => 'Kalle',
-        'salt' => 856412
+        'salt' => 100
     ],
     [
         'name' => 'Pierre',
-        'salt' => 215863
+        'salt' => 200
     ]
 ];
 
 $size = count($people);
 
 for ($i = 0; $i < $size; $i++) {
-    $people[$i]['salt'] = mt_rand(000000, 999999);
+    $people[$i]['salt'] = mt_rand(400, 1000);
 }
 
 echo '<pre>';
 print_r($people);
+
+// 
+$places = [
+    'West' => 'Flic',
+    'North' => 'Loius',
+    'East' => 'Bagatelle',
+    'East' => 'Moka',
+    'North' => 'Flaq'
+];
+
+while ($explore = current($places)) {
+    if ($explore === 'Flic') {
+        echo 'The region of your destination is ' . key($places);
+    }
+    next($places);
+}
 
 // Displays all associative array keys where value is equal to Milk
 $products = [
@@ -325,7 +340,7 @@ print_r($arr);
 $newArr = $arr;
 
 foreach ($newArr as $key => $value) {
-    // $arr[3] will be updated with each value from $arr...
+    // $newArr[3] will be updated with each value from $newArr...
     echo "{$key} => {$value} ";
     echo '<pre>';
     print_r($newArr);
@@ -348,9 +363,9 @@ foreach ($sportShoes as $val1) {
 
 // 
 
-$numbers = [1, 2, 3, 4, 5];
+$numbers = [1, 2, 6, 4, 5];
 
-$arrayLength = count($numbers);
+$arrayLength = 3;
 
 for ($x = 0; $x < $arrayLength; $x++) {
     echo $numbers[$x];
@@ -366,8 +381,10 @@ $array = [
 foreach ($array as list($a, $b)) {
     // $a contains the first element of the nested array,
     // and $b contains the second element.
-    echo "A: $a; B: $b\n";
+    echo "A: $a; B: $b ";
+    echo '<br>';
 }
+
 // 
 
 $drinks = [
@@ -388,6 +405,7 @@ $tea = [
 
 // Listing all the variables 
 list($flavour, $topping, $brand) = $tea;
+
 echo 'My type of tea is ' . $flavour . ' and I prefer ' . $topping . ' I like buying from ' . $brand;
 
 // 
@@ -442,7 +460,6 @@ while ($x < 20) {
         break;
     }
     echo 'The numbers are ' . $x . '<br>';
-
     $x++;
 }
 
@@ -479,11 +496,11 @@ foreach ($gamingPc as $key => $value) {
 
 $i = 5;
 
-if ($i == 3) {
+if ($i === 3) {
     echo 'i equals to three';
-} elseif ($i == 2) {
+} elseif ($i === 2) {
     echo 'i equals to two';
-} elseif ($i == 4) {
+} elseif ($i === 4) {
     echo 'i equals to four';
 } else {
     echo 'xxx';
@@ -524,4 +541,51 @@ while (++$y) {
         default:
             break;
     }
+}
+
+$today = date("D");
+switch ($today) {
+    case "Mon":
+        echo "Today is Monday. Write some codes";
+        break;
+    case "Tue":
+        echo "Today is Tuesday. Buy some food.";
+        break;
+    case "Wed":
+        echo "Today is Wednesday. Visit a doctor.";
+        break;
+    case "Thu":
+        echo "Today is Thursday. Repair your car.";
+        break;
+    case "Fri":
+        echo "Today is Friday. Party tonight.";
+        break;
+    case "Sat":
+        echo "Today is Saturday. Its movie time.";
+        break;
+    case "Sun":
+        echo "Today is Sunday. Do some rest.";
+        break;
+    default:
+        echo "No information available for that day.";
+        break;
+}
+
+
+// Match To be looked at later Since it started from php 8
+
+$fruit = 'orange';
+
+$returnValues = match ($fruit) {
+    'apple' => 'This is an apple',
+    'kiwi' => 'This is a kiwi',
+    'orange' => 'This is an orange',
+};
+
+var_dump($returnValues);
+
+
+// Declare
+
+declare(ticks=1) {
 }

@@ -55,7 +55,23 @@ class AnotherClass
 $obj = new AnotherClass();
 echo 'The name of the person is ' . $obj->name;
 
+$result = [];
+$arraySize = 2;
 
+for ($x = 0; $x < $arraySize; $x++) {
+
+    do {
+        $randomNumbers = mt_rand(200, 350);
+    } while (($randomNumbers % 2) == 1);
+
+    $result[] = $randomNumbers;
+}
+
+asort($result);
+
+echo '<pre>';
+print_r($result);
+echo '</pre>';
 
 $Color = [
     'A' => 'Blue',
@@ -105,20 +121,29 @@ echo '<pre>';
 print_r($result);
 
 
-$result = [];
-$arraySize = 2;
+$output = [];
+$sizeOfArray = 3;
 
-for ($x = 0; $x < $arraySize; $x++) {
-
+for ($x = 0; $x < $sizeOfArray; $x++) {
     do {
-        $randomNumbers = mt_rand(200, 350);
-    } while (($randomNumbers % 2) == 1);
+        $dynamicNumbers = mt_rand(250, 300);
+    } while (($dynamicNumbers % 2) == 1);
 
-    $result[] = $randomNumbers;
+    $output[] = $dynamicNumbers;
 }
 
-asort($result);
-
+asort($output);
 echo '<pre>';
-print_r($result);
-echo '</pre>';
+print_r($output);
+
+$speedKings = [
+    'Valtteri',
+    'Ham',
+    'Max',
+    'Charles',
+    'Norris'
+];
+
+if (array_search('Charles', $speedKings) !== false) {
+    echo $speedKings[3] . ' The new driver without sprint speed was found';
+}
