@@ -10,6 +10,17 @@ if ($d === 'Friday') {
     echo 'Oh Well, Today is ' . $d;
 }
 
+// 
+$today = date('D');
+
+if ($today === 'Sun') {
+    echo 'Hey it is the start of the week once again';
+} elseif ($today === 'Wed') {
+    echo 'Well mid-week is here';
+} else {
+    echo 'Today is ' . $today;
+}
+
 // $x = 4;
 // $y = 5;
 
@@ -558,18 +569,6 @@ switch ($today) {
 }
 
 
-// Match To be looked at later Since it started from php 8
-
-$fruit = 'orange';
-
-$returnValues = match ($fruit) {
-    'apple' => 'This is an apple',
-    'kiwi' => 'This is a kiwi',
-    'orange' => 'This is an orange',
-};
-
-var_dump($returnValues);
-
 
 // Declare
 
@@ -589,7 +588,7 @@ register_tick_function('example');
 
 declare(ticks=1) {
 
-    
+
     $cars = [
         'Ford',
         'Volvo',
@@ -638,4 +637,32 @@ function add1($x)
     return $x + 1;
 }
 
-echo "5 + 1 is " . add1(5);
+echo "5 + 2 is " . add1(6);
+
+// 
+
+
+
+// Require
+
+require 'test.php';
+
+// Include 
+
+include 'vars.php';
+
+// Require_once 
+
+require_once 'practice.php';
+
+require_once('practice.php');
+
+
+// Goto used to jump to another section in the program
+
+goto b;
+echo 'b is an alphabet';
+
+// target point
+b:
+echo 'Try and Know your A';

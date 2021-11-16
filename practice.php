@@ -147,3 +147,38 @@ $speedKings = [
 if (array_search('Charles', $speedKings) !== false) {
     echo $speedKings[3] . ' The new driver without sprint speed was found';
 }
+
+
+$x = 10;
+if ($x <= 12) {
+    echo 'the values are' . $x;
+    echo '<br>';
+}
+
+
+$today = date('D');
+
+if ($today === 'Sun') {
+    echo 'Hey it is the start of the week once again';
+} elseif ($today === 'Wed') {
+    echo 'Well mid-week is here';
+} else {
+    echo 'Today is ' . $today;
+}
+
+// 
+
+$num = 16;
+
+while ($num <= 20) {
+    echo 'Numbers only here' . $num;
+    $num++;
+    echo '<br>';
+}
+
+$testNum = 10;
+do {
+    echo 'The right number is ' . $testNum;
+    $testNum++;
+    echo '<br>';
+} while ($testNum < 20);
