@@ -124,7 +124,6 @@ endwhile;
 // 
 
 $z = 5;
-
 do {
     $z++;
     echo 'the number is ' . $z;
@@ -172,11 +171,11 @@ for ($x = 0; $x < 4; $x++) {
 
 // 
 $people = [
-    [
+    0 => [
         'name' => 'Kalle',
         'salt' => 100
     ],
-    [
+    1 => [
         'name' => 'Pierre',
         'salt' => 200
     ]

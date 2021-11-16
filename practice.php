@@ -182,3 +182,8 @@ do {
     $testNum++;
     echo '<br>';
 } while ($testNum < 20);
+
+
+$color = 'blue';
+
+echo gettype($color);
