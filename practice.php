@@ -187,3 +187,12 @@ do {
 $color = 'blue';
 
 echo gettype($color);
+
+// 
+$currentTime = time();
+echo $currentTime;
+
+
+$defaultTime = mktime(0, 0, 0, 8, 12, 1997);
+echo $defaultTime;
+

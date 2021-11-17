@@ -11,18 +11,32 @@ echo 'Today is ' . $day;
 
 // 
 
+$currentDay = date('l');
+echo 'On ' . $currentDay . ' We feast hard';
+
+// 
+
 $copyright = '&copy; 2018-';
 
 echo $copyright . date('Y');
 
 // 
 
-echo 'The current time is ' . date('h:i:sa');
+echo 'The current time is ' . date('h:i:s');
 // 
 
-date_default_timezone_set("Indian/ Mauritius");
+$timeZone = new DateTimeZone('Indian/Mauritius');
+// calling the method using ->
+echo '<pre>';
+print_r($timeZone->getLocation());
+echo '<pre>';
+print_r(timezone_location_get($timeZone));
 
-echo 'The time is ' . date('h:i:sa');
+// 
+
+$defaultZone = date_default_timezone_set('Indian/Mauritius');
+
+echo 'The time in this zone is ' . $defaultZone . date('h:i:sa');
 
 // 
 
@@ -68,3 +82,10 @@ while ($startdate < $enddate) {
     echo date('M d', $startdate) . '<br>';
     $startdate = strtotime('+1 week', $startdate);
 }
+
+// reads a file an writes it to the output buffer(safeguard). 
+echo readfile('data.txt');
+
+
+
+
