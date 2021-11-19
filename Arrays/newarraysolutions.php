@@ -592,3 +592,28 @@ $pattern = "/";
 
 // $testString = '1-2 18-20 9-11';
 // print_r(stringRange($testString));
+
+
+// question 31 
+
+// $arr = [
+//     'Lenovo' => 'yoga',
+//     'Paris Saint' => 'Psg',
+//     'Stamford Bridge' => 'Chelsea',
+// ];
+
+// $highestValue = NULL;
+// $highestIndex = NULL;
+
+// foreach ($arr as $key => $value) {
+//     $length = strlen($value);
+
+//     if ($highestValue < $length) {
+//         $highestValue = $length;
+//         $highestIndex = $key;
+//     }
+// }
+// echo 'The highest index of value in the array is ' . $highestIndex;
+
+
+// Question 32
