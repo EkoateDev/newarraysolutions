@@ -1,8 +1,8 @@
 <?php
 
-// include 'vars.php';
+include 'vars.php';
 
-// echo 'The ' . $color . ' Sweet ' . $fruit;
+echo 'The ' . $color . ' Sweet ' . $fruit;
 
 // 
 
@@ -50,22 +50,22 @@
 // fclose($fileName);
 
 
-$file = 'data.txt';
+// $file = 'data.txt';
 
-if (file_exists($file)) {
+// if (file_exists($file)) {
 
-    $handle = fopen($file, 'r') or die('ERROR: cannot open this file');
+//     $handle = fopen($file, 'r') or die('ERROR: cannot open this file');
 
-    if ($handle) {
-        echo fread($handle, filesize($file));
-        echo '<br>';
-    }
+//     if ($handle) {
+//         echo fread($handle, filesize($file));
+//         echo '<br>';
+//     }
 
-    echo 'Ending the file here <br>';
+//     echo 'Ending the file here <br>';
 
-    if (fclose($handle)) {
-        echo ' The file has been closed';
-    }
-} else {
-    echo ' ERROR: File does not exist';
-}
+//     if (fclose($handle)) {
+//         echo ' The file has been closed';
+//     }
+// } else {
+//     echo ' ERROR: File does not exist';
+// }

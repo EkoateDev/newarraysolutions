@@ -1,10 +1,10 @@
 <?php
 
-$file = 'newtext.txt';
+$fileName = 'newtext.txt';
 
 $data = 'The quick guy';
 
-$handle = fopen($file, 'w') or die('Error: Cannot open this file');
+$handle = fopen($fileName, 'w') or die('Error: Cannot open this file');
 
 fwrite($handle, $data) or die('Error Cannot write to this file');
 

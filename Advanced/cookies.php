@@ -12,6 +12,7 @@ if (!isset($_COOKIE[$cookieName])) {
     echo "Value is: " . $_COOKIE[$cookieName];
 }
 
+
 //  Check if cookies are enabled 
 
 setcookie("test_cookie", "test", time() + 3600, '/');
