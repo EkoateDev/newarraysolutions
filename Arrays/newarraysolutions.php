@@ -617,3 +617,108 @@ $pattern = "/";
 
 
 // Question 32
+
+// $fileName = 'data.txt';
+
+// $fileInfo = new SplFileInfo($fileName);
+
+// echo 'the extension of this file is ' . $fileInfo->getExtension();
+
+// Question 33 
+
+// function searchValues($value, $key, $arr)
+// {
+//     foreach ($arr as $k => $val) {
+//         if ($val['Iphone'] === $value) {
+//             return $k;
+//         }
+//     }
+//     return NULL;
+// }
+
+$smartPhones = [
+    'Samsung' => 'Note',
+    'Apple' => 'Iphone',
+    'Lg' => 'Bait',
+    'Sony' => 'Xperia'
+];
+
+$searchValue = 'Iphone';
+
+if (in_array($searchValue, $smartPhones)) {
+    echo 'A product with the name ' . $searchValue . ' has been found';
+} else {
+    echo 'The product is not available';
+}
+
+// print_r('searchValues'($smartPhones));
+
+// $arrayKey = array_keys($smartPhones);
+// $valfound = NULL;
+// foreach ($smartPhones as $key => $value) {
+//     if (array_search('Bait', $smartPhones, true)) {
+//         $valfound = $value;
+//     }
+// }
+// echo 'A product with the name ' . $valfound . ' has been found';
+
+
+// if (array_search('Iphone', $smartPhones, true)) {
+//     echo 'A product with the name ' . array_keys($smartPhones) . ' has been found';
+// } else {
+//     echo 'The product is not available';
+// }
+
+// foreach ($smartPhones as $key => $value) {
+//     if (array_search('Note', $smartPhones, true)) {
+//     }
+// }
+// echo 'The desired product has been found ' . $key;
+
+// while ($valuesFound = current($smartPhones)) {
+//     if (array_search('Iphone 13', $smartPhones, true)) {
+//         echo 'The desired product has been found ' . key($smartPhones);
+//     } else {
+//         echo 'The product is not available';
+//     }
+// }
+
+
+// Question 34
+
+// $arraySort = [
+//     'project' => 'roadconstruction 21',
+//     'hp' => 'PROBOOK 16',
+//     'apple' => 'IPHONE 08',
+//     'samsung' => 'galaxy 03',
+// ];
+
+// natcasesort($arraySort);
+// echo 'Sorting the Values in a natural order ';
+// echo '<br>';
+// echo '<pre>';
+// print_r($arraySort);
+
+// 35
+
+function trimElements(&$values)
+{
+    $values = trim($values);
+}
+
+$staffNames = [
+    'bono  ',
+    ' Wolf',
+    ' Chritian ',
+    'Marko',
+    ', '
+];
+echo 'Values before the trim';
+echo '<br>';
+echo '<pre>';
+var_dump($staffNames);
+
+echo 'Values after the trim';
+echo '<br>';
+array_walk($staffNames, 'trimElements');
+var_dump($staffNames);
