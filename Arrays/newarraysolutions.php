@@ -701,24 +701,338 @@ if (in_array($searchValue, $smartPhones)) {
 
 // 35
 
-function trimElements(&$values)
+// function trimElements(&$values)
+// {
+//     $values = trim($values);
+// }
+
+// $staffNames = [
+//     'bono  ',
+//     ' Wolf',
+//     ' Chritian ',
+//     'Marko',
+//     ', '
+// ];
+// echo 'Values before the trim';
+// echo '<br>';
+// echo '<pre>';
+// var_dump($staffNames);
+// echo '</pre>';
+
+// echo 'Values after the trim';
+// echo '<br>';
+// array_walk($staffNames, 'trimElements');
+// echo '<pre>';
+// var_dump($staffNames);
+// echo '</pre>';
+
+// 36
+
+// $countryNames = [
+//     'MauRiTius',
+//     'NIGERIa',
+//     'Togo',
+//     'GhaNA'
+// ];
+
+// $lowerCase = array_map('strtolower', $countryNames);
+// $upperCase = array_map('strtoupper', $countryNames);
+
+// echo 'Values in Lower case';
+// echo '<br>';
+// foreach ($lowerCase as $value) {
+//     echo $value;
+//     echo '<br>';
+// }
+
+// echo 'Values in Upper case';
+// echo '<br>';
+// foreach ($upperCase as $element) {
+//     echo $element;
+//     echo '<br>';
+// }
+
+// Question 37
+
+// $arr = [
+//     'D700',
+//     '60D',
+//     'miroless',
+//     'E56',
+//     'miroless',
+//     'Lumix',
+//     'miroless'
+// ];
+
+// $count = array_count_values($arr);
+
+// if (array_search('miroless', $arr) !== false) {
+//     echo 'This product appeared ' . $count['miroless'] . ' times';
+// }else {
+//     echo 'The product is not available';
+// }
+
+
+// if (in_array($searchElement, $cameraNames)) {
+//     echo array_count_values(array_column($cameraNames, $searchElement))[$searchElement];
+// }
+
+// Question 38
+
+// $formulaOneDrivers = [
+//     0 =>  [
+//         'number' => '44',
+//         'name' => 'Lewis',
+//         'car' => 'Mercedes'
+//     ],
+//     1 =>  [
+//         'number' => '77',
+//         'name' => 'Valtteri',
+//         'car' => 'Mercedes'
+//     ],
+//     2 =>  [
+//         'number' => '44',
+//         'name' => 'George',
+//         'car' => 'Williams'
+//     ]
+// ];
+
+// function arrayUnique($arr, $key)
+// {
+//     $newArr = [];
+//     $sum = 0;
+//     $keyArr = [];
+
+//     foreach ($arr as $value) {
+//         if (!in_array($value[$key], $keyArr)) {
+//             $keyArr[$sum] = $value[$key];
+//             $newArr[$sum] = $value;
+//         }
+//         $sum++;
+//     }
+//     return $newArr;
+// }
+// echo '<pre>';
+// print_r(arrayUnique($formulaOneDrivers, 'number'));
+
+// Question 39
+
+// $weekdays = [
+//     'monday',
+//     'tuesday',
+//     'wednesday',
+//     'monday',
+//     'thursday',
+//     'wednesday',
+//     'friday',
+// ];
+
+// $result = array_unique($weekdays, SORT_STRING);
+// print_r($result);
+
+// Question 40 
+
+// $footballClubs = [
+//     'chelsea',
+//     'bayern',
+//     'United',
+//     'chelsea',
+//     'madrid',
+//     'psg',
+//     'madrid',
+// ];
+
+// $sortedArr = array_values(array_unique($footballClubs));
+// echo '<pre>';
+// print_r($sortedArr);
+
+// Question 41
+
+// function arrUnique($arr)
+// {
+//     $matchingArr = [];
+//     natcasesort($arr);
+//     reset($arr);
+
+//     $newKey = NULL;
+//     $newvalue = NULL;
+
+//     foreach ($arr as $key => $value) {
+//         if ($value === NULL) {
+//             continue;
+//         }
+//         if ($newvalue == $value) {
+//             $matchingArr[$newKey] = $newvalue;
+//             $matchingArr[$key] = $newvalue;
+//         }
+//         $newvalue = $value;
+//         $newKey = $key;
+//     }
+//     return $matchingArr;
+// }
+
+// $emailAddresses = [
+//     'johndoe@hotmail.com',
+//     'rollingstone@gmail.com',
+//     'johndoe@hotmail.com'
+// ];
+
+// echo 'The emails which are not unique are ';
+// echo '<br>';
+// echo '<pre>';
+// print_r(arrUnique($emailAddresses));
+
+
+// Question 42 
+
+// function arrayFlatten($arr)
+// {
+//     $newArr = [];
+
+//     foreach ($arr as $key => $value) {
+
+//         if (is_array($value)) {
+//             $newArr = array_merge($newArr, arrayFlatten($value));
+//         } else {
+//             $newArr[$key] = $value;
+//         }
+//     }
+//     return $newArr;
+// }
+
+// $arr  = [
+//     'a' => [
+//         -1,
+//         -2,
+//         0,
+//         2,
+//         3
+//     ],
+//     'b' => [
+//         'c' => [
+//             -1,
+//             0,
+//             2,
+//             0,
+//             3
+//         ]
+//     ]
+// ];
+
+// $result = arrayFlatten($arr);
+// $flattenValues = array_unique($result);
+// echo '<pre>';
+// print_r($flattenValues);
+
+
+// Question 43 
+
+// $firstDriversList = 'Lewis, Ocon, Carlos, Vettle';
+// $secondDriversList = 'Ham, Ocon, Lando, Vettle';
+
+// $mergedList = array_merge(explode(',', $firstDriversList), explode(',', $secondDriversList));
+
+// $uniqueList = array_unique($mergedList);
+
+// $listJoin = implode(' , ', $uniqueList);
+
+// echo $listJoin;
+
+
+// Question 44 
+
+// function removeData($arr, $val)
+// {
+//     $duplicate = 0;
+
+//     foreach ($arr as $key => $value) {
+//         if (($duplicate > 0) && ($value === $val)) {
+//             unset($arr[$key]);
+//         }
+//         if ($value ===  $val) $duplicate++;
+//     }
+//     return array_filter($arr);
+// }
+
+// $arr = [
+//     4, 5, 6, 7, 4, 7, 8
+// ];
+
+// print_r(removeData($arr, 7));
+
+// Question 45
+
+// function dataComparism($laptopNames, $workstations)
+// {
+//     return strcmp(implode(',', $laptopNames), implode(',', $workstations));
+// }
+
+// $laptopNames = [
+//     [
+//         'Lenovo' => 'Legion'
+//     ],
+//     [
+//         'Apple' => 'Macbook'
+//     ],
+//     [
+//         'Lg' => 'Soft'
+//     ]
+// ];
+
+// $workstations = [
+//     [
+//         'Acer' => 'predator'
+//     ],
+//     [
+//         'Lenovo' => 'G5'
+//     ],
+//     [
+//         'Lg' => 'Soft'
+//     ],
+// ];
+
+// $result = array_udiff($laptopNames, $workstations, 'dataComparism');
+// print_r($result);
+
+// Question 46
+
+// function strCheck($arrValues)
+// {
+//     return array_map('is_string', $arrValues);
+// }
+
+// $arrOne = [
+//     'Lg',
+//     'macbook',
+//     'asus',
+// ];
+
+// $arr = [
+//     'Valtteri',
+//     77,
+//     693,
+// ];
+
+// var_dump(strCheck($arrOne));
+
+// Question 47
+
+function firstKey($arr)
 {
-    $values = trim($values);
+    $firstKey = array_key_first($arr);
+
+    if (null === $firstKey) {
+        $val = 'Array is empty';
+    } else {
+        $val = $arr[$firstKey];
+    }
+    return $val;
 }
-
-$staffNames = [
-    'bono  ',
-    ' Wolf',
-    ' Chritian ',
-    'Marko',
-    ', '
+$arr = [
+    'cabs' => 'Rice',
+    'protein' => 'Beans',
+    'fresh' => 'Pasta',
+    'sick' => 'Soup'
 ];
-echo 'Values before the trim';
-echo '<br>';
-echo '<pre>';
-var_dump($staffNames);
 
-echo 'Values after the trim';
-echo '<br>';
-array_walk($staffNames, 'trimElements');
-var_dump($staffNames);
+print_r(firstKey($arr));
