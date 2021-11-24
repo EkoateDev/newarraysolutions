@@ -996,7 +996,7 @@ if (in_array($searchValue, $smartPhones)) {
 
 // Question 46
 
-// function strCheck($arrValues)
+// function stringCheck($arrValues)
 // {
 //     return array_map('is_string', $arrValues);
 // }
@@ -1017,22 +1017,69 @@ if (in_array($searchValue, $smartPhones)) {
 
 // Question 47
 
-function firstKey($arr)
-{
-    $firstKey = array_key_first($arr);
+// function firstKey($arr)
+// {
+//     $firstKey = array_key_first($arr);
 
-    if (null === $firstKey) {
-        $val = 'Array is empty';
-    } else {
-        $val = $arr[$firstKey];
-    }
-    return $val;
-}
-$arr = [
-    'cabs' => 'Rice',
-    'protein' => 'Beans',
-    'fresh' => 'Pasta',
-    'sick' => 'Soup'
-];
+//     if (null === $firstKey) {
+//         $val = 'Array is empty';
+//     } else {
+//         $val = $arr[$firstKey];
+//     }
+//     return $val;
+// }
+// $arr = [
+//     'cabs' => 'Rice',
+//     'protein' => 'Beans',
+//     'fresh' => 'Pasta',
+//     'sick' => 'Soup'
+// ];
 
-print_r(firstKey($arr));
+// print_r(firstKey($arr));
+
+// Question 48
+
+// function unionJoin($arr1, $arr2)
+// {
+//     $union = array_unique(
+//         array_merge(
+//             array_intersect($arr1, $arr2),
+//             array_diff($arr1, $arr2),
+//             array_diff($arr2, $arr1)
+//         )
+//     );
+//     return $union;
+// }
+
+// $arr1 = [
+//     'Redbull',
+//     'Mercedes',
+//     'Petronas',
+//     'Mclaren'
+// ];
+
+// $arr2 = [
+//     'Lewis',
+//     'Mercedes',
+//     'Honda',
+//     'Mclaren',
+//     'Valtteri'
+// ];
+
+// print_r(unionJoin($arr1, $arr2));
+
+// Question 49 
+
+// $testData = [
+//     'c1' => 'Red',
+//     'c2' => 'Green',
+//     'c3' => 'White',
+//     'c4' => 'Black'
+// ];
+
+// $secondArr = [
+//     'c2',
+//     'c4'
+// ];
+
+// print_r(array_intersect_key($testData, array_flip($secondArr)));
