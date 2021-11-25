@@ -896,38 +896,37 @@ if (in_array($searchValue, $smartPhones)) {
 
 // function arrUnique($arr)
 // {
-//     $matchingArr = [];
-//     natcasesort($arr);
-//     reset($arr);
-
-//     $newKey = NULL;
-//     $newvalue = NULL;
-
-//     foreach ($arr as $key => $value) {
-//         if ($value === NULL) {
-//             continue;
-//         }
-//         if ($newvalue == $value) {
-//             $matchingArr[$newKey] = $newvalue;
-//             $matchingArr[$key] = $newvalue;
-//         }
-//         $newvalue = $value;
-//         $newKey = $key;
-//     }
-//     return $matchingArr;
+//     return array_unique(array_diff_assoc($arr, array_unique($arr)));
 // }
 
-// $emailAddresses = [
+// $emailAddr = [
 //     'johndoe@hotmail.com',
 //     'rollingstone@gmail.com',
-//     'johndoe@hotmail.com'
+//     'johndoe@hotmail.com',
+//     'stay@outlook.com',
+//     'rollingstone@gmail.com',
 // ];
 
 // echo 'The emails which are not unique are ';
 // echo '<br>';
 // echo '<pre>';
 // print_r(arrUnique($emailAddresses));
+// 
 
+$emailAddr = [
+    'johndoe@hotmail.com',
+    'rollingstone@gmail.com',
+    'johndoe@hotmail.com',
+    'stay@outlook.com',
+    'rollingstone@gmail.com',
+];
+
+$uniqueArr = array_unique(array_diff_assoc($emailAddr, array_unique($emailAddr)));
+echo 'The emails which are not unique are ';
+echo '<br>';
+echo '<pre>';
+print_r($uniqueArr);
+echo '</pre>';
 
 // Question 42 
 
