@@ -452,7 +452,7 @@ print_r($result);
 //     'color' => [
 //         'a' => 'Red',
 //         'b' => 'Green',
-//         'c ' => 'White'
+//         'c' => 'White'
 //     ],
 //     'numbers' => [
 //         1,
@@ -469,6 +469,55 @@ print_r($result);
 // ];
 
 // echo 'Write a PHP script to print ' . $color['holes'][5] . ' and ' . $color['color']['a'];
+
+// Question 21 
+
+// function subnetSort($subA, $subB)
+// {
+//     $subOneArr = explode(',', $subA);
+//     $subTwoArr = explode(',', $subB);
+//     foreach (range(0, 4) as $val) {
+//         if ($subOneArr[$val] < $subTwoArr[$val]) {
+//             return -1;
+//         } elseif ($subOneArr[$val] > $subTwoArr[$val]) {
+//             return 1;
+//         }
+//     }
+//     return -1;
+// }
+
+// $subnets = [
+//     '192.168.100.1',
+//     '167.180.36.174',
+//     '235.130.143.74',
+//     '147.176.235.40',
+//     '122.29.122.117',
+//     '226.148.37.214'
+// ];
+
+// usort($subnets, 'subnetSort');
+// echo '<pre>';
+// print_r($subnets);
+
+// Question 23 
+
+$africanRegions = [
+    'East' => [
+        'Tanzania',
+        'Kenya',
+        'Uganda',
+        'Botswana'
+    ]
+];
+
+
+foreach ($africanRegions as $key => $val) {
+    $east[$key] = $val['East'];
+}
+
+$arrSort = array_multisort($east, SORT_ASC, $africanRegions);
+
+print_r($arrSort);
 
 // Question 24
 
@@ -576,22 +625,19 @@ print_r($result);
 
 // Question 29
 
-$str = '2-4 19-21 8-15';
+// $strOne = 'A';
 
-$pattern = "/";
+// $strTwo = 'D';
 
-// function stringRange($string1)
-// {
-//     preg_match_all("/([0-9]{1,2})-?([0-9]{0,2}) ?,?;?/", $string1, $a);
-//     $y = [];
-//     foreach ($a[1] as $z => $i) {
-//         $y = array_merge($y, range($i, (empty($a[2][$z]) ? $i : $a[2][$z])));
-//     }
-//     return ($y);
-// }
+// $range = array_fill(0, 5, range($strOne, $strTwo));
 
-// $testString = '1-2 18-20 9-11';
-// print_r(stringRange($testString));
+// echo '<pre>';
+// print_r($range);
+
+
+
+
+
 
 
 // question 31 
@@ -1083,3 +1129,169 @@ if (in_array($searchValue, $smartPhones)) {
 // ];
 
 // print_r(array_intersect_key($testData, array_flip($secondArr)));
+
+// Question 50 
+
+// $racingLocation = [
+//     'Sao Paul',
+//     'Monaco',
+//     'Silverstone',
+//     'Austria',
+//     'Qatar'
+// ];
+
+// $lastItem = array_pop($racingLocation);
+
+// echo $lastItem;
+
+// // another method 
+
+// function endOfArr($racingLocation)
+// {
+//     return end($racingLocation);
+// }
+
+// $racingLocation = [
+//     'Sao Paul',
+//     'Monaco',
+//     'Silverstone',
+//     'Austria',
+//     'Qatar'
+// ];
+
+// $lastValue = endOfArr($racingLocation);
+
+// echo $lastValue;
+
+// Question 52
+
+// $firstArr = [
+//     'c1' => 'Red',
+//     'c2' => 'Green',
+//     'c3' => 'White',
+//     'c4' => 'Black'
+// ];
+
+// $secondArr = [
+//     'c2',
+//     'c4'
+// ];
+
+// $arrFilter = array_diff_key($firstArr, array_flip($secondArr));
+// echo '<pre>';
+// print_r($arrFilter);
+
+// Question 53
+
+
+// $brands = [
+//     'Canon' => '80D',
+//     'Apple' => 'Macbook',
+//     'Samsung' => 'Note 20',
+//     'Puma' => 'Only See Great',
+//     'Nike' => 'Mecury'
+// ];
+
+// $item = $brands['Nike'];
+
+// $arrFilter = array_filter($brands, function ($keys) use ($item) {
+//     return $keys !== $item;
+// });
+
+// echo '<pre>';
+// print_r($arrFilter);
+
+// Question 54
+
+// $myBestPlayers = [
+//     'Cristiano Ronaldo     r7',
+//     'Kai               Haverts',
+//     '   Christian Pulisic  ',
+//     '  Lewandowski'
+// ];
+
+// $cleanedArr = array_map('trim', $myBestPlayers);
+// echo '<pre>';
+// print_r($cleanedArr);
+
+// Question 55 
+
+// $string = ' Thus, the most important characteristic of economic order prevailing in the world 
+// today is a wage system that deprives the workers of any right to the products being produced, 
+// be it for the society or for a private establishment
+// Why were not only women created . 
+// Sporting clubs represent the basic organization of traditional sport in the world today ';
+
+// echo '<pre>';
+
+// $result = array_filter(array_map('trim', explode("\n", $string)));
+// print_r($result);
+
+
+// Question 56
+
+// $arrFill = array_fill(0, 4, array_fill(0, 4, 10));
+// echo '<pre>';
+// print_r($arrFill);
+
+// Question  57
+
+// function compareArrays($array1, $array2)
+// {
+//     if ($array1 === $array2) {
+//         return 0;
+//     } elseif ($array1 > $array2) {
+//         return 1;
+//     } else {
+//         return -1;
+//     }
+//     // return ($x > $y) ? 1 : -1;
+// }
+// function compareArr($array1, $array2)
+// {
+//     return array_diff_assoc($array1['Toyota'], $array2['Toyota']);
+// }
+
+// $car1 = [
+//     'petronas' => 'Amg',
+//     'porshe' => '911',
+//     'Toyota' => [
+//         'Supra' => 'Gtx',
+//         'Lexus' => 'x400'
+//     ]
+// ];
+// $car2 = [
+//     'petronas' => 'Amg',
+//     'porshe' => '911',
+//     'Toyota' => [
+//         'corolla' => 'sports',
+//         'Lexus' => 'x400'
+//     ]
+// ];
+
+// print_r(compareArr($car1, $car2));
+
+// Question 58 
+
+// $strArr = [
+//     'x',
+//     'y',
+//     'y'
+// ];
+
+// $arrOfNumbers = [
+//     10,
+//     20,
+//     30
+// ];
+
+// $combinedArr = array_combine($arrOfNumbers, $strArr);
+// echo '<pre>';
+// print_r($combinedArr);
+
+// Question 59
+
+// $range = array_combine(range(20, 25), range(2, 7));
+
+// echo '<pre>';
+// print_r($range);
