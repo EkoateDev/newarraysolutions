@@ -1,24 +1,6 @@
 <?php
 
-// construct allows the initialization of objects properties upon the creation of object
-class Fruit
-{
 
-    public $name;
-    public $color;
-
-    function __construct($name)
-    {
-        $this->name = $name;
-    }
-    function getName()
-    {
-        return $this->name;
-    }
-}
-
-$mango = new Fruit('Banana');
-echo $mango->getName();
 
 // passing in multiple  parameters
 
@@ -58,3 +40,23 @@ echo '<br>';
 echo $laptop->getName();
 echo '<br>';
 echo $laptop->getRam();
+
+class Shoes
+{
+    public $size;
+    public $color;
+
+    function __construct($size)
+    {
+        $this->size = $size;
+    }
+
+    function getSize()
+    {
+        return $this->size;
+    }
+}
+
+$highTops = new Shoes('45');
+
+echo ' The size of my shoe is ' . $highTops->getSize();
