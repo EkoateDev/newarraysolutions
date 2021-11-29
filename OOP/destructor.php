@@ -1,8 +1,5 @@
 <?php
 
-//  a destructor is called when the object is destructed or the script is stopped or exicted. 
-// if a destruct function is created php will auto call the function at the end of the script. 
-
 class FormulaOne
 {
 
@@ -17,6 +14,8 @@ class FormulaOne
 
     function __destruct()
     {
-        echo "The drivere is{$this->driverName}" ;
+        echo "The driver is {$this->driverName} and the company he drives for is {$this->company}";
     }
 }
+
+$gridSetting = new FormulaOne('Lewis', 'Mercedes');

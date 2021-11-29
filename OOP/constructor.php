@@ -1,9 +1,4 @@
 <?php
-
-
-
-// passing in multiple  parameters
-
 class Computers
 {
 
