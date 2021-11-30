@@ -747,30 +747,65 @@ if (in_array($searchValue, $smartPhones)) {
 
 // 35
 
-// function trimElements(&$values)
-// {
-//     $values = trim($values);
-// }
+function trimElements(&$values)
+{
+    $values = trim($values);
+}
 
-// $staffNames = [
-//     'bono  ',
-//     ' Wolf',
-//     ' Chritian ',
-//     'Marko',
-//     ', '
-// ];
-// echo 'Values before the trim';
-// echo '<br>';
-// echo '<pre>';
-// var_dump($staffNames);
-// echo '</pre>';
+$staffNames = [
+    'bono  ',
+    ' Wolf',
+    ' Chritian ',
+    'Marko',
+    ', '
+];
+echo 'Values before the trim';
+echo '<br>';
+echo '<pre>';
 
-// echo 'Values after the trim';
-// echo '<br>';
-// array_walk($staffNames, 'trimElements');
-// echo '<pre>';
-// var_dump($staffNames);
-// echo '</pre>';
+var_dump($staffNames);
+echo '</pre>';
+
+echo 'Values after the trim';
+echo '<br>';
+
+array_walk($staffNames, 'trimElements');
+echo '<pre>';
+
+var_dump($staffNames);
+echo '</pre>';
+
+
+//  another approach 
+
+function elementsTrim($values)
+{
+    return trim($values);
+}
+
+$staffNames = [
+    'bono  ',
+    ' Wolf',
+    ' Chritian ',
+    'Marko',
+    ', '
+];
+echo 'Values before the trim';
+echo '<br>';
+echo '<pre>';
+
+var_dump($staffNames);
+echo '</pre>';
+
+echo 'Values after the trim';
+echo '<br>';
+
+foreach ($staffNames as $key => $val) {
+
+    $staffNames[$key] = elementsTrim($val);
+}
+echo '<pre>';
+var_dump($staffNames);
 
 // 36
 
