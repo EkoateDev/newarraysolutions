@@ -74,5 +74,5 @@ class WristWatch
     }
 }
 
-$rolex = new WristWatch();
+$rolex = new WristWatch('plain', 'gold');
 var_dump($rolex instanceof WristWatch);
