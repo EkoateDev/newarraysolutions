@@ -435,7 +435,10 @@ print_r($result);
 
 // Question 17
 
-
+function getMinimumValueNotZero(Array $value)
+{
+    
+}
 
 
 // Question 18
